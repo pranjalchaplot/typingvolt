@@ -3,17 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-    <link rel="manifest" href="img/site.webmanifest">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <title>Typing Volt</title>
 </head>
 <body>
-    
+    <button id="settings-btn" class="settings-btn">
+        <i class="fas fa-cog"></i>
+    </button>
 
+    <div id="settings" class="settings">
+        <form id="setting-form">
+            <div>
+                <label for="difficulty">Difficulty</label>
+                <select id="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+        </form>
+    </div>
 
+    <div class="container">
+        <h2><i class="fa fa-bolt"></i> Typing Volt <i class="fa fa-bolt"></i></h2>
+        <small>Type the following:</small>
+         
+        <h1 id="word"></h1>
+        <input type="text" id="text" autocomplete="off" placeholder="Type Here!!">
+
+        <p class="time-container">
+            Time Left: <span id="time">10s</span>
+        </p>
+
+        <p class="score-container">
+            Score: <span id="score">0</span>
+        </p>
+
+        <div id="end-game-container" class="end-game-container"></div>
+    </div>
 
     <script src="script.js"></script>
 </body>
