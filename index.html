@@ -15,20 +15,24 @@
         <i class="fa fa-cog"></i>
     </button>
 
+    <button id="owner-btn" class="owner-btn">
+        <a href="http://github.com/pranjalchaplot/" target="_blank"><i class="fa fa-heart"></i></a>
+    </button>
+
     <div id="settings" class="settings">
-        <form id="setting-form">
+        <form id="settings-form">
             <div>
                 <label for="difficulty">Difficulty</label>
                 <select id="difficulty">
-                    <option value="easy">Easy</option>
-                    <option value="medium">Medium</option>
-                    <option value="hard">Hard</option>
+                    <option value="easy">👶 (30 second)</option>
+                    <option value="medium">🔥 (1 minute)</option>
+                    <option value="hard">⚡ (2 minute)</option>
                 </select>
             </div>
         </form>
     </div>
 
-    <div class="container">
+    <div id = "container" class="container">
         <h2><i class="fa fa-bolt"></i> Typing Volt <i class="fa fa-bolt"></i></h2>
         <small>Type the following:</small>
          
@@ -41,11 +45,11 @@
         </div>
 
         <p class="time-container">
-            Time Left: <span id="time">10s</span>
+            ⏲: <span id="time"></span>
         </p>
 
         <p class="score-container">
-            Speed: <span id="score">0</span> WPM
+            💨: <span id="score">0</span> WPM
         </p>
 
         <div id="end-game-container" class="end-game-container"></div>
