@@ -33,14 +33,19 @@
         <small>Type the following:</small>
          
         <h1 id="word"></h1>
-        <input type="text" id="text" autocomplete="off" placeholder="Type Here!!">
+        <div class="type-container">
+            <input type="text" id="text" autocomplete="off" placeholder="Type Here!!">
+            <button id="skip">
+                Skip <i class="fa fa-arrow-circle-right"></i> 
+            </button>
+        </div>
 
         <p class="time-container">
             Time Left: <span id="time">10s</span>
         </p>
 
         <p class="score-container">
-            Score: <span id="score">0</span>
+            Speed: <span id="score">0</span> WPM
         </p>
 
         <div id="end-game-container" class="end-game-container"></div>
