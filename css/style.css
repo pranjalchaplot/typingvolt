@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&family=Raleway:wght@800&family=Ubuntu:wght@700&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Asap:ital,wght@1,600&display=swap");
+
 :root {
   box-sizing: border-box;
   font-family: "Ubuntu", sans-serif;
@@ -113,7 +115,13 @@ h2 {
 }
 
 h1 {
-  margin: 0;
+  margin: 10px;
+  font-size: 25px;
+  font-family: "Asap", sans-serif;
+  background-color: rgba(255, 255, 255, 0.787);
+  padding: 2px 5px;
+  border-radius: 10px;
+  width: fit-content;
 }
 
 .score-container {
@@ -122,11 +130,11 @@ h1 {
   background-color: rgb(255, 38, 38);
   text-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.3);
   text-align: center;
-  width: 60px;
+  width: fit-content;
   padding: 3px;
   border-radius: 3px;
   position: absolute;
-  top: 30px;
+  top: 5px;
   right: 20px;
   box-shadow: 0 1.3px 3.5px rgba(0, 0, 0, 0.9);
 }
@@ -140,9 +148,28 @@ h1 {
   padding: 3px;
   border-radius: 3px;
   position: absolute;
-  top: 30px;
+  top: 5px;
   left: 20px;
   box-shadow: 0 1.3px 3.5px rgba(0, 0, 0, 0.9);
+}
+
+#skip {
+  font-size: 20px;
+  font-family: "Asap", sans-serif;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  align-self: center;
+  margin-left: 30px;
+  width: 100px;
+  cursor: pointer;
+}
+
+.type-container {
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
 }
 
 .end-game-container {
