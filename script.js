@@ -8,7 +8,7 @@ const settings = document.getElementById('settings');
 const settingsForm = document.getElementById('settings-form');
 const difficultySelect = document.getElementById('difficulty');
 const skip = document.getElementById('skip');
-
+const containerEl = document.getElementById('container')
 
 /// List of Words
 const lines = [
@@ -30,14 +30,56 @@ let randomLine
 let score = 0;
 
 // Init time
-let time = 10;
+let time = 30;
+
+// Set difficulty to value in ls or medium
+let difficulty =
+  localStorage.getItem('difficulty') !== null
+    ? localStorage.getItem('difficulty')
+    : 'medium';
+
+// Set difficulty select value
+difficultySelect.value =
+  localStorage.getItem('difficulty') !== null
+    ? localStorage.getItem('difficulty')
+    : 'medium';
+
+// Setting Time
+function setTime() {
+    if (difficultySelect.value === "easy"){
+        time = 30;
+    } else if(difficultySelect.value === "medium"){
+        time = 60;
+    } else {
+        time = 120;
+    }
+    timeEl.innerHTML = time + 's';
+}
+setTime();
+
+// Start Timer
+text.addEventListener('click', () => {
+    const timeInterval = setInterval(updateTime, 1000)
+
+    // Update Time;
+    function updateTime() {
+        time--;
+        timeEl.innerHTML = time + 's'; 
+    
+        if(time === 0) {
+            clearInterval(timeInterval);
+    
+            //EndGame
+            gameOver();
+        }
+    }
+}, {once : true});
 
 // Generate Random Line from Array
 function getRandomLine() {
     return lines[Math.floor(Math.random() * lines.length)];
 };
 
-// console.log(getRandomLine());
 
 // Add Line to DOM
 function addLineToDOM() {
@@ -49,7 +91,15 @@ addLineToDOM();
 
 // Updating Score
 function updateScore() {
-    score+= (randomLine.split(" ").length);
+    console.log(randomLine.split(" ").length);
+    if (difficultySelect.value === "easy"){
+        score+= 2*(randomLine.split(" ").length);
+    } else if(difficultySelect.value === "medium"){
+        score+= (randomLine.split(" ").length);
+    } else {
+        score+= (randomLine.split(" ").length)/2;
+    }
+    
     scoreEl.innerHTML = `${score}`;
 };
 
@@ -78,3 +128,23 @@ text.addEventListener('input', e => {
         e.target.value = '';
     }
 });
+
+// Game Over Function
+function gameOver(){
+    containerEl.innerHTML = `
+    <h1 id="timeout">Time Ran Out!!</h1>
+    <p id="result">Your TypingVolt⚡ Speed is ${score} WPM</p>
+    <button id="reload" onclick = "location.reload()">Reload</button>
+    `
+    endgameEl.style.display = 'flex';
+}
+
+// Settings Button Click
+settingsBtn.addEventListener('click', () => settings.classList.toggle('hide'));
+
+// Settings Select
+settingsForm.addEventListener('change', e => {
+    difficulty = e.target.value;
+    localStorage.setItem('difficulty', difficulty);
+    location.reload();
+  });
