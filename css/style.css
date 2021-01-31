@@ -1,10 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Raleway:wght@800&family=Ubuntu:wght@700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Raleway:wght@800&family=Ubuntu:wght@700&display=swap');
 
-@import url("https://fonts.googleapis.com/css2?family=Asap:ital,wght@1,600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@1,600&display=swap');
 
 :root {
   box-sizing: border-box;
-  font-family: "Ubuntu", sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-size: 4vh;
 }
 
@@ -69,6 +69,10 @@ input {
   right: 30px;
 }
 
+.fa-heart {
+  color: black;
+}
+
 .settings {
   position: absolute;
   top: 0;
@@ -89,14 +93,14 @@ input {
 }
 
 h2 {
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
   padding: 0px;
   margin-top: 5px;
 }
 
 ::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .fa-bolt {
@@ -125,7 +129,7 @@ h2 {
 h1 {
   margin: 10px;
   font-size: 25px;
-  font-family: "Asap", sans-serif;
+  font-family: 'Asap', sans-serif;
   background-color: rgba(255, 255, 255, 0.787);
   padding: 2px 5px;
   border-radius: 10px;
@@ -163,7 +167,7 @@ h1 {
 
 #skip {
   font-size: 20px;
-  font-family: "Asap", sans-serif;
+  font-family: 'Asap', sans-serif;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -203,11 +207,11 @@ h1 {
 }
 
 #reload {
-  font-family: "Ubuntu", sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 #timeout {
-  font-family: "Ubuntu", sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   color: rgb(238, 255, 0);
   text-decoration: solid;
   text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
